@@ -1,0 +1,58 @@
+.time-wrap{
+    position: relative;
+}
+#timeline-header{
+    margin-bottom: 15px;
+}
+#toggle-btn-wrap{
+    font-style: italic;
+    font-size: .9em;
+    line-height: 1em;
+}
+#toggle-btn{
+    text-transform: underline;
+}
+#toggle-btn:hover{
+    cursor: pointer;
+}
+#time-slides-instructions{
+    font-style: italic;
+}
+.tns-controls{
+    margin-bottom: 15px;
+}
+.tns-controls:focus{
+    outline: none;
+}
+.tns-controls button{
+    display: inline-block;
+    padding: 4px 0;
+    width: 100px;
+    border: none;
+    border-radius: 4px;
+    text-shadow: none;
+    font-family: Arial,sans-serif;
+    font-size: .9em;
+    color: #fff;
+    text-align: center;
+    background: #0083D2;
+    transition: background 1s;
+}
+.tns-controls button:first-child{
+    margin-right: 5px;
+}
+.tns-controls button:focus{
+    outline: none;
+}
+.tns-controls button:hover, .tns-controls button:active{
+    background: #18aeff;
+    transition: background 1s;
+    cursor: pointer;
+}
+.tns-controls button:disabled{
+    background: #ccc;
+}
+.tns-nav{
+    display: none;
+    visibility: hidden;
+}

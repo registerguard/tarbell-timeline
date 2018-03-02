@@ -1,0 +1,42 @@
+<html>
+	<head>
+		<title>{{ headline }}</title>
+		{% block css %}
+		<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.6.0/tiny-slider.css">
+		<link rel="stylesheet" type="text/css" href="css/style.css" />
+		{% endblock css %}
+	</head>
+	<body>
+		
+		<div id="timeline-header">
+			<h3 id="timeline">{{ headline }}</h3>
+			<p id="toggle-btn-wrap"><span id="toggle-instructions">Use the buttons below or swipe to move year-by-year through the timeline.</span> <a id="toggle-btn">Click here to show the full timeline.</a></p>
+		</div>
+		<div style="display: none;" id="time-list">
+			<ul>
+				{% for d in data %}
+					<li><b>{{ d.date|format_date('%b. %d, %Y') }}:</b> {{ d.description }}.</li>
+				{% endfor %}
+			</ul>
+		</div>
+		<div style="display: block" id="time-wrap">
+			<div id="time-slides">
+				{% for b in buckets %}
+				<div class="year">
+					{% for d in data %}
+						{% if d.bucket == b.bucket %}
+							<h4>{{ d.date|format_date('%b. %d, %Y') }}</h4>
+							<p><a href="{{ d.url }}">{{ d.description }}</a></p>
+						{% endif %}
+					{% endfor %}
+				</div>
+				{% endfor %}
+			</div>
+			<hr>
+		</div>
+
+		<!--[if (lt IE 9)]><script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.6.0/min/tiny-slider.helper.ie8.js"></script><![endif]-->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.6.0/min/tiny-slider.js"></script>
+		<script src="js/scripts.js"></script>
+	</body>
+</html>
